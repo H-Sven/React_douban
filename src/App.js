@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Header from './views/header/Header';
+import Footer from './views/footer/Footer';
+import './App.scss';
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.callFn = this.callFn.bind(this)
+    this.state = {
+       pageName:'',
+    }
+  }
+  callFn(pageName){ //获取菜单栏选择的值
+    this.setState({pageName:pageName})
+  }
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app_box">
+        <Header callFn={this.callFn} />
+        {this.props.children}
+        <Footer />
       </div>
     );
   }

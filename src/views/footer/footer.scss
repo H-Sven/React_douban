@@ -1,0 +1,24 @@
+.footer {
+  width: 1200px;
+  margin:  0 auto;
+  text-align: center;
+  .my_icon {
+    .anticon {
+      font-size: 30px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    .anticon:hover {
+      color: #5f80bd;
+    }
+  }
+  .copyright {
+    color: #777;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    p {
+      margin: 0;
+    }
+  }
+}

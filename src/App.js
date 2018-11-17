@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './views/header/Header';
 import Footer from './views/footer/Footer';
+import { BackTop } from 'antd';
 import './App.scss';
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
         <Header callFn={this.callFn} />
         {this.props.children}
         <Footer />
+        <BackTop />
       </div>
     );
   }

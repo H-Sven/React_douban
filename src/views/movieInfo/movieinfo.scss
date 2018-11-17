@@ -1,0 +1,115 @@
+.movie_info {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  h1 {
+    font-weight: 600;
+    padding-bottom: 20px;
+    span {
+      color: #888;
+    }
+  }
+  h2 {
+    color: #007722;
+    padding-top: 30px;
+  }
+  .movie_info_box {
+    display: flex;
+    img {
+      width: 200px;
+      height: 300px;
+      margin-right: 20px;
+    }
+    .movie_introduce {
+      flex: 1;
+      flex-wrap: wrap;
+      div {
+        line-height: 26px;
+      }
+      .text_span {
+        cursor: pointer;
+        color: #666699;
+        padding-right: 15px;
+      }
+      .text_span:hover {
+        color: blue;
+      }
+    }
+    .douban_rate {
+      width: 300px;
+      margin: 2px 0 0 0;
+      padding: 0 0 0 15px;
+      border-left: 1px solid #eaeaea;
+      color: #9b9b9b;
+      .rate_box {
+        display: flex;
+        .rating_num {
+          color: #494949;
+          padding: 0;
+          font-size: 32px;
+          padding-right: 10px;
+        }
+        .rate {
+          flex: 1;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .introduce {
+    p {
+      text-indent: 2em;
+      font-size: 14px;
+      line-height: 1.62;
+    }
+  }
+  .celebrities ,.movie_pphoto{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .celebrities_list {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 20px;
+      margin-right: 30px;
+      img {
+        width: 133px;
+        height: 200px;
+      }
+      .name {
+        padding: 10px 0 0 0;
+      }
+    }
+  }
+  .movie_pphoto {
+    .celebrities_list {
+      width: 25%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .reviews {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .reviews_list {
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+    }
+    .reviews_name {
+      display: flex;
+      align-items: center;
+      .rate {
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+    p {
+      font-size: 14px;
+      line-height: 26px;
+      padding: 10px 0;
+    }
+  }
+}

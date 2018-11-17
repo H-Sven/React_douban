@@ -6,6 +6,7 @@ import {Route, Switch, Redirect } from 'react-router-dom';
  
 import App from './../App';
 import Home from './../views/home/Home';
+import MovieInfo from './../views/movieInfo/MovieInfo';
  
 const Root = () => (
   <Switch>
@@ -15,6 +16,7 @@ const Root = () => (
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/home" component={Home} />
+            <Route path="/MovieInfo/:id" component={MovieInfo} />
             {/*路由不正确时，默认跳回home页面*/}
             <Route render={() => <Redirect to="/" />} />
           </Switch>

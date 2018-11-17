@@ -1,5 +1,6 @@
 import axios from "axios";
 import qs from "qs";
+import { message} from 'antd';
 
 
 
@@ -13,11 +14,13 @@ axios.interceptors.request.use(
   config => {
     if (config.method === 'post') {
       config.data = qs.stringify({
-        ...config.data
+        ...config.data,
+        apikey:'0b2bdeda43b5688921839c8ecb20399b'
       });
     }else{
       config.params = {
         ...config.params,
+        apikey:'0b2bdeda43b5688921839c8ecb20399b'
       }
     }
     return config;
@@ -32,7 +35,8 @@ axios.interceptors.response.use(
     return response;
   },
   error => {
-    // alert("网络错误，请刷新重试");
+    message.destroy()
+    message.error('非法请求');
     return Promise.reject(error);
   }
 );

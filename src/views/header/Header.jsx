@@ -9,8 +9,9 @@ import { withRouter } from 'react-router-dom';
       current: '/home',
       itemList:[
         {key:'/home',title:'首页',icon:'home'},
-        {key:'/toutiao',title:'豆瓣电影',icon:'user'},
-        {key:'/user',title:'关于我',icon:'user'},
+        {key:'/home1',title:'豆瓣影评',icon:'home'},
+        {key:'/home2',title:'豆瓣排行',icon:'home'},
+        {key:'/home3',title:'最新资讯',icon:'home'},
       ]
     }
   }

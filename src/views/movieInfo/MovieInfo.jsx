@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import './movieinfo.scss';
-import { Input,Rate,Progress } from 'antd';
+import { Rate,Progress } from 'antd';
 import { get } from "../../static/js/http";
-
-
 
 export default class MovieInfo extends Component {
   constructor(props) {
@@ -36,6 +34,10 @@ export default class MovieInfo extends Component {
       num = num + data[key];
     }
     return num
+  }
+  // 查看全部
+  allBtn(id){
+    this.props.history.push(`/Photos/${id}`)
   }
   render() {
     const movieInfo = this.state.movieInfo;
@@ -73,8 +75,10 @@ export default class MovieInfo extends Component {
               })}</span>
             </div>
             <div>
-              {movieInfo.website && <span>官方网站：</span>}
-              <span className="text_span">{movieInfo.website}</span>
+              {movieInfo.tags && <span>标签：</span>}
+              <span>{movieInfo.tags && movieInfo.tags.map((tags,index)=>{
+                return <span className="text_span" key={index}>{tags}</span>
+              })}</span>
             </div>
             <div>
               {movieInfo.countries && <span>制片国家/地区：</span>}
@@ -145,19 +149,21 @@ export default class MovieInfo extends Component {
           {celebrities && celebrities.slice(0,7).map((directors,index)=>{
             return (
               <div className="celebrities_list" key={index}>
-                <img src={directors.avatars.medium} alt="Image" />
+                <img src={directors.avatars.medium} alt="Imagess" />
                 <span className="name">{directors.name}</span>
               </div>
             )
           })}
         </div>
         {/* 视频和图片 */}
-        <h2>{movieInfo.title ? `${movieInfo.title}的视频和图片` : ''}</h2>
+        <h2>{movieInfo.title ? `${movieInfo.title}的视频和图片 ------` : ''}
+          <span className="all" onClick={this.allBtn.bind(this,movieInfo.id)}>{movieInfo.title ? '全部' : ''}</span>
+        </h2>
         <div className="movie_pphoto">
           {moviePhoto && moviePhoto.slice(0,4).map((directors,index)=>{
             return (
               <div className="celebrities_list" key={index}>
-                <img src={directors.medium} alt="Image" />
+                <img src={directors.medium} alt="Imagess" />
                 <span className="name">{directors.title}</span>
               </div>
             )

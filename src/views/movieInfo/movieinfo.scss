@@ -13,6 +13,12 @@
     color: #007722;
     padding-top: 30px;
   }
+  .all {
+    cursor: pointer;
+  }
+  .all:hover  {
+    color: #2e2eb4;
+  }
   .movie_info_box {
     display: flex;
     img {

@@ -1,0 +1,29 @@
+.photos_box {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  h1 {
+    margin-bottom: 30px;
+  }
+  .photo_info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .img {
+      width: 18%;
+      height: 300px;
+      margin-bottom: 30px;
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: all .2s ease-in-out;
+      background-position: center center;
+    }
+    .img:hover {
+      transform: scale(1.1);
+      transition:all .2s ease-in-out;
+    }
+  }
+}

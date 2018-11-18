@@ -60,7 +60,7 @@ export default class Home extends Component {
             this.state.movieList.subjects && this.state.movieList.subjects.map((item,index)=>{
               return (
                 <div className="list_box" key={index} onClick={this.watchMovieInfo.bind(this,item.id)}>
-                  <img src={item.images.small} className="img_responsive" alt="Image" onMouseEnter={this.handleMouseOver.bind(this,index)} onMouseLeave={this.handleMouseOut.bind(this,index)} />
+                  <img src={item.images.small} className="img_responsive" alt="Imagess" onMouseEnter={this.handleMouseOver.bind(this,index)} onMouseLeave={this.handleMouseOut.bind(this,index)} />
                   <div className="movie_title">{item.title.length >6 ? `${item.title.slice(0,6)}...` : item.title}</div>
                   {item.rating.average / 2 < 0.1 ? 
                     <div> 暂无评分 </div> : 
